@@ -23,12 +23,21 @@ class counter extends React.Component {
     this.props.getNumber(-1);
   }
 
+  static getDerivedStateFromProps(nextProps, prevState) {
+    if (nextProps.clear === 0) {
+      return {
+        number: 0
+      };
+    }
+    return null;
+}
+
   render() {
     return (
       <div>
-        <button onClick={this.increase}>+</button>
-        <mark>{this.state.number}</mark>
-        <button onClick={this.descrease}>-</button>
+        <button onClick = { this.increase }>+</button>
+        <mark>{ this.state.number }</mark>
+        <button onClick = { this.descrease }>-</button>
       </div>
     );
   }
