@@ -4,14 +4,22 @@ import Count from '../Counter';
 class CounterGroup extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      numberOfCounts: 0
+    };
+  }
+
+  inputChange = (event) => {
+    this.setState({ numberOfCounts: Number(event.target.value) });
   }
 
   render() {
     return (
       <div>
+        number of counters: <input onChange={this.inputChange}></input>
         {
-          new Array(6).fill(0).map((value, index) => {
-            return <Count key={index}/>
+          new Array(this.state.numberOfCounts).fill(0).map((value, index) => {
+            return <Count key={index} />
           })
         }
       </div>
