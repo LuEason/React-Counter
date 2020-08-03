@@ -1,5 +1,6 @@
 import React from 'react';
 import store from '../../index';
+import { reset } from '../../actions/actions';
 
 class counter extends React.Component {
   constructor(props) {
@@ -10,9 +11,12 @@ class counter extends React.Component {
   }
 
   componentDidMount() {
-    unSubscribe = store.subscribe(() =>
-      this.setState({ number: 0 })
-    )
+    store.subscribe(() =>{
+      if (store.getState().reset) {
+        this.setState({ number: 0 });
+        store.dispatch(reset(false));
+      }
+    })
   }
 
   increase = () => {
