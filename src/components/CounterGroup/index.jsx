@@ -26,7 +26,7 @@ class CounterGroup extends React.Component {
         Total: { this.state.total }
         {
           new Array(this.state.numberOfCounts).fill(0).map((value, index) => {
-            return <Count key = { index } getNumber = { this.calcTotal } clear = { this.state.total } />
+            return <Count key = { index } getIncreasedValue = { this.calcTotal } clear = { this.state.total } />
           })
         }
       </div>

@@ -9,18 +9,17 @@ class counter extends React.Component {
   }
 
   increase = () => {
-    let newNumber = this.state.number + 1;
     this.setState((preState) => {
       return {
-        number: newNumber
+        number: preState.state.number + 1
       }
     });
-    this.props.getNumber(1);
+    this.props.getIncreasedValue(1);
   }
 
   descrease = () => {
     this.setState({ number: this.state.number - 1 });
-    this.props.getNumber(-1);
+    this.props.getIncreasedValue(-1);
   }
 
   static getDerivedStateFromProps(nextProps, prevState) {
