@@ -11,7 +11,7 @@ class CounterGroup extends React.Component {
       <div>
         {
           new Array(6).fill(0).map((value, index) => {
-            return <Count key={index} />
+            return <Count key={index}/>
           })
         }
       </div>
