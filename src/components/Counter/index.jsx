@@ -17,7 +17,7 @@ class counter extends React.Component {
     }
 
     descrease = () => {
-        this.setState({number: this.state.number - 1});
+        this.setState({ number: this.state.number - 1 });
     }
 
     render() {
