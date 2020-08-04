@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import CounterGroupContainer from './containerComponent/counterGroupContainer';
+import CounterGroupContainer from './containers/counterGroupContainer';
 
 function App() {
   return (

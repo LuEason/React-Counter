@@ -1,10 +1,7 @@
 import React from 'react';
-import CounterContainer from '../../containerComponent/counterContainer';
+import CounterContainer from '../../containers/counterContainer';
 
 class CounterGroup extends React.Component {
-  constructor(props) {
-    super(props);
-  }
 
   inputChange = (event) => {
     this.setState({ numberOfCounts: Number(event.target.value) });
