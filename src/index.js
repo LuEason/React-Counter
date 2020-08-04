@@ -4,14 +4,14 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { createStore } from 'redux';
-import todoApp from './reducers/reduces';
+import reduces from './reducers/reduces';
 import { Provider } from 'react-redux';
 
-let store = createStore(todoApp);
+let store = createStore(reduces);
 
 ReactDOM.render(
   <React.StrictMode>
-    <Provider store={store}>
+    <Provider store = { store }>
       <App />
     </Provider>
   </React.StrictMode>,

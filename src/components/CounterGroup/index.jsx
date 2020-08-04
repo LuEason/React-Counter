@@ -1,35 +1,25 @@
 import React from 'react';
-import Count from '../Counter';
-import { reset } from '../../actions/actions';
-import store from '../../index';
+import CounterContainer from '../../containerComponent/counterContainer';
 
 class CounterGroup extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      numberOfCounts: 0,
-      total: 0
-    };
   }
 
   inputChange = (event) => {
     this.setState({ numberOfCounts: Number(event.target.value) });
-    this.setState({ total: 0 });
-    store.dispatch(reset(true));
-  }
-
-  calcTotal = (e) => {
-    this.setState({ total: this.state.total + e });
+    this.props.setCounterNumber(Number(event.target.value));
+    this.props.setZeroTotal();
   }
 
   render() {
     return (
       <div>
-        Number of counters: <input value = { this.state.numberOfCounts } onChange = { this.inputChange }></input><br />
-        Total: { this.state.total }
+        Number of counters: <input value = { this.props.counterNumber } onChange = { this.inputChange }></input><br />
+        Total: { this.props.total }
         {
-          new Array(this.state.numberOfCounts).fill(0).map((value, index) => {
-            return <Count key = { index } getIncreasedValue = { this.calcTotal }/>
+          new Array(this.props.counterNumber).fill(0).map((value, index) => {
+            return <CounterContainer key = { index }/>
           })
         }
       </div>

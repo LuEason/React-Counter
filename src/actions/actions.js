@@ -1,5 +1,4 @@
-export const RESERT = 'RESERT';
-
-export function reset(isToReset) {
-  return { type: RESERT, isToReset };
-}
+export const INCREASE = 'INCREASE';
+export const DESCREASE = 'DESCREASE';
+export const CHANGE_COUNTER_NUMBER = 'CHANGE_COUNTER_NUMBER';
+export const SET_ZERO_TOTAL = 'SET_ZERO_TOTAL';

@@ -1,18 +1,10 @@
 import { combineReducers } from 'redux';
+import cacl from './total';
+import setCounterNumber from './counterNumber';
 
-import { RESERT } from '../actions/actions';
+const reduces = combineReducers({
+  total: cacl,
+  counterNumber: setCounterNumber
+});
 
-function setReset(state = RESERT, action) {
-  switch (action.type) {
-    case RESERT:
-      return action.isToReset;
-    default:
-      return state;
-  }
-}
-
-const todoApp = combineReducers({
-  reset: setReset
-})
-
-export default todoApp;
+export default reduces;
